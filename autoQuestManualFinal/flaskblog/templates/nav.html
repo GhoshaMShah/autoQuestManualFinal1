@@ -1,0 +1,176 @@
+<link href="{{url_for('static', filename = 'css/bootstrap.min.css')}}" rel="stylesheet">
+
+{% block body %}
+<head>
+	<style>
+.inl
+{
+    width: 100%;
+    padding: 20px;
+    
+}
+
+li:hover {
+    transform:scale(2,2);
+    -webkit-transform:scale(1.3,1.3);
+    -moz-transform:scale(1.3,1.3);
+}
+button.hover
+{
+
+    transform:scale(2,2);
+    -webkit-transform:scale(1.3,1.3);
+    -moz-transform:scale(1.3,1.3);
+
+}
+
+ul {
+    /*display: inline-block;*/
+    
+    justify-content: center;
+    
+display: inline-flex;
+  list-style-type: none;
+  margin: 20px;
+  
+  
+  /*overflow: hidden;*/
+
+  background-color: #;
+}
+
+li {
+    width: 100%;
+  float: left;
+  padding: 0;
+  display: inline-block;
+
+}
+
+li a, .dropbtn {
+  
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+  background-color: #ff9900;
+}
+
+li.dropdown {
+    float: left;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: inline-block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+/*
+		a {
+    color: #0060B6;
+    text-decoration: none;
+}
+
+a:hover 
+{
+     color:#00A0C6; 
+     text-decoration:none; 
+     cursor:pointer;  
+}*/
+	</style>
+	<script src= 
+"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"> 
+    </script> 
+</head>
+
+<body>
+    <center>
+    <ul>
+<div>
+
+</div>
+
+<br><br>
+<!--
+<li class="dropdown">
+    <a href="#dropdown-content" class="dropbtn">Show</a>
+<div class="dropdown-content" id="dropdown-content">
+-->
+    
+<li class="inl">
+    <div class="inl">
+<button type="button" class="btn btn-success  pull-right" data-toggle="modal" style="background-color: rgb(0, 102, 102); height:60px; color: white;"><a style="color: white;" href="{{ url_for('showSubjects',username=username)}}" >Show Subjects</a></button>
+
+</div>
+
+</li>
+<br><br><br><br>
+
+
+<li class="inl">
+    <div class="inl">
+<button type="button" class="btn btn-success  pull-right" data-toggle="modal"  style="background-color: rgb(0, 102, 102); height:60px; color: white;"><a style="color: white;" href="{{ url_for('Index2',username=username)}}"  >Show Questions</a></button>
+</div>
+</li>
+
+<!--
+<br><br>
+<div>
+<button type="button" class="btn btn-success  pull-right" data-toggle="modal" data-target="#myModal" style="background-color: rgb(0, 102, 102); color: white;">Add Question </button>
+</div>
+-->
+<br><br><br><br>
+<li class="inl">
+<div class="inl">
+<button type="button" class="btn btn-success  pull-right" data-toggle="modal" style="background-color: rgb(0, 102, 102); height:60px;"><a style="color: white;" href="{{ url_for('generate',username=username)}}"   >Generate question paper</a></button>
+</div>
+</li>
+
+<li class="inl">
+    <div class="inl">
+<button type="button" class="btn btn-success" pull-right onclick="return confirm('Are You Sure you want to Logout?')" style="background-color: rgb(0, 102, 102); height:60px; color: white;"><a style="color: white;" href="{{ url_for('logout')}}">Logout</a></button>
+</div>
+</li>
+
+</ul>
+</center>
+
+</body>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+{% endblock %}
+
+<script type="text/javascript" src="{{url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
+
+<script type="text/javascript" src="{{url_for('static', filename = 'js/bootstrap.min.js')}}"></script>
+</body>

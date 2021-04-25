@@ -1,0 +1,129 @@
+{% include "header.html" %}
+
+<link href="{{url_for('static', filename = 'css/bootstrap.min.css')}}" rel="stylesheet">
+
+{% block body %}
+<head>
+	<style type="text/css">
+		.whole
+		{
+			margin:100px;
+			margin-top: 10px;
+		}
+		.tableFixHead
+		{
+			margin-left: 10%
+			margin-right:10%;
+		}
+    	.tableFixHead thead th 
+    	{
+        position: sticky;
+        color: black;
+        background-color: rgb(204, 204, 255);
+        top: 0;
+        }
+        body
+{
+    counter-reset: Count-Value;     
+}
+table
+{
+    border-collapse: separate;
+}
+tr td:first-child:before
+{
+  counter-increment: Count-Value;   
+  content: counter(Count-Value);
+}
+.body
+{
+	padding:100px;
+}
+</style>
+</head>
+<body>
+	
+
+
+
+
+
+	
+	
+	<div class="whole" style="font-size: 20px;">
+	<br><br>
+    
+    <div class="tableFixHead">
+
+	<table name="questionsTable" cellpadding="50" cellspacing="50" width="100%" class="questionsTable">
+
+<fieldset>
+		<legend></legend>
+	
+	
+	 
+	<h3> Subjcts data: </h3>
+	<tbody>
+		        <thead>
+
+
+                <tr class="trOfShowQuestions">
+
+              <th>SR_NO</th>
+              <th>Subject code</th>
+              <th>Subject_name</th>
+              <th>Number of Questions</th>
+              
+          
+
+
+          </tr>
+      </thead>
+		        
+                {% for row in subjects %}
+                
+                    <tr>
+
+
+                   
+                <td></td>
+                <td> {{row.0}}</td>
+                <td> {{row.1}} </td>
+                <td> {{row.2}} </td>
+
+                
+                
+                </tr>
+               
+              
+                {% endfor %}
+                </tbody>
+                
+
+                
+                
+                
+            </fieldset>
+                
+            
+            </table> 
+        </div>
+        
+        
+
+
+</div>
+
+
+</body>
+<div class="whole">
+{% include "footer.html" %}
+</div>
+{% endblock %}
+
+
+
+<script type="text/javascript" src="{{url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
+
+<script type="text/javascript" src="{{url_for('static', filename = 'js/bootstrap.min.js')}}"></script>
+</body>

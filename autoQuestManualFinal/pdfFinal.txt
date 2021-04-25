@@ -1,0 +1,20 @@
+@app.route('/index/<string:username>/generate/pdf',methods=['POST','GET'])
+def PDFOfQuestionPaper(username,**args):
+    config = pdf.configuration(wkhtmltopdf="E:/wkhtmltopdf/bin/wkhtmltopdf.exe")
+    dat = date.today()
+    html = render_template('quesPaper.html',questions1=dataA,questions2=dataB,questions3=dataC,semester=semester1,subject=subject1,marks1=marks1,marks2=marks2,marks3=marks3,date=dat)
+    #file_class = Pdf()
+    from xhtml2pdf import pisa
+    from io import BytesIO
+    #from StringIO import StringIO
+
+    PDF = BytesIO()
+    
+
+    pisa.CreatePDF(BytesIO(html.encode()),PDF)
+
+    valueOfData =  PDF.getvalue()
+    headers = {
+        'content-type': 'application.pdf',
+        'content-disposition': 'attachment; filename=certificate.pdf'}
+    return valueOfData, 200, headers

@@ -1,0 +1,57 @@
+<html>
+<head>
+
+
+
+	<style type="text/css">
+	.myStyle
+{
+  
+  position: relative;
+  margin-top: 20px;
+  margin-left: 15px;
+  margin-bottom: 20px;
+  margin-right: 15px;
+  padding: 5px;
+  font-size: 20px;
+  
+
+
+}
+.body
+{
+	background-color: green;
+}
+.addQuestion
+{
+  margin-left: 10px;
+}
+
+</style>
+</head>
+{% extends "layout.html" %}
+{% block content %}
+    <br><br>
+<h2>Welcome to AutoQuest system</h2>
+<br>
+<hr>
+<div class="myStyle">
+<b>1)</b> You can register yourself with AutoQuest, following which you will be able to login.<br>
+<b>2)</b> You can add, edit or delete the Questions as per your requirements and convinience.<br>
+<p class="addQuestion"> -<b>a.</b> Add the question of any Subject and any Unit manually by selecting 'Add your Question'<br>
+ -<b>b.</b>&nbsp;&nbsp;Add the questions of any Subject of a Unit automatically by selecting 'Add your Questions Automatically'<br>
+ &nbsp;&nbsp;In the Questions List, you need to Edit Marks,Difficulty level for the Automatically added Questions.
+</p>
+
+<b>3)</b> A Question paper can be generated from these questions according to questions in Questions List..
+
+</div>
+<hr>
+<script type="text/javascript">
+  preventBack();
+</script>
+
+
+{% endblock content %}
+
+</html>

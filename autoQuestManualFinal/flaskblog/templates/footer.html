@@ -1,0 +1,27 @@
+<head>
+	<link href="{{url_for('static', filename = 'css/bootstrap.min.css')}}" rel="stylesheet">
+</head>
+<body>
+<div name="logout">
+
+	
+	<form action="{{ url_for('logout') }}" method="POST" name="LogoutForm">
+		<button type="submit" name="submit" class="btn btn-success" pull-right onclick="return confirm('Are You Sure you want to Logout?')">Logout</button>
+	</form>
+</div>
+
+
+
+     <div class="well">
+
+        <h3>
+
+            <span style="padding-top: 15px"> Make sure to enter correct Question data for generating question paper! </span>
+            <br>
+            
+            
+
+        </h3>
+
+    </div>
+</body>

@@ -1,0 +1,62 @@
+{% include "header.html" %}
+
+<link href="{{url_for('static', filename = 'css/bootstrap.min.css')}}" rel="stylesheet">
+
+{% block body %}
+<head>
+	<script src= 
+"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"> 
+    </script> 
+    <!--
+    <script type="text/javascript">
+        function preventBack() { window.history.forward(); }
+        setTimeout("preventBack()", 0);
+        window.onunload = function () { null };
+    </script>
+-->
+
+
+</head>
+<body>
+	<div class="container">
+
+    <div class="row">
+
+        <div class="col md-12">
+        	<br><br><br>
+        	<hr>
+
+	{% set pdf = pdf %}
+{% if pdf == 1 %}
+            <i style="font-size: 26px;"> PDF of Question paper downloaded! You can view PDF in downloads.</i>
+            {% endif %}
+
+            {% if pdf==0 %}
+            <p>
+            	&#128528; 
+            </p>
+            <i style="font-size: 26px;"> Sorry, coudn't generate question paper! &nbsp; &nbsp; 
+            	<br>
+            Please try again.</i>
+            {% endif %}
+<hr>
+            <br><br><br>
+        	
+            
+            <div>
+
+{% include "footer.html" %}
+    </div>
+
+
+
+
+
+{% endblock %}
+
+
+
+<script type="text/javascript" src="{{url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
+
+<script type="text/javascript" src="{{url_for('static', filename = 'js/bootstrap.min.js')}}"></script>
+</body>

@@ -1,0 +1,83 @@
+username=username,questions1=dataA,questions2=dataB,questions3=dataC, semester=semester1,subject=subject1,marks1=marks1,marks2=marks2,marks3=marks3,date=dat)
+
+
+
+
+
+@app.route('/index/<string:username>/generate/pdf',methods=['POST','GET'])
+def PDFOfQuestionPaper(username):
+    pdf = 1
+    import pdfkit as pdf
+    
+    config = pdf.configuration(wkhtmltopdf="E:/wkhtmltopdf/bin/wkhtmltopdf.exe")
+    pdf.from_file('E:/darshan sem 7/project/flaskTutorial/coreyImp/flaskblog/templates/quesPaper.html', 'E:/darshan sem 7/project/flaskTutorial/coreyImp/flaskblog/templates/out2.pdf')
+    return render_template('quesPaperPdf.html', username=username,pdf=pdf)
+    """
+
+
+
+
+whole of comments:
+"""
+    pdf = 1
+    import pdfkit as pdf
+
+    #pdf = StringIO()
+    
+    config = pdf.configuration(wkhtmltopdf="E:/wkhtmltopdf/bin/wkhtmltopdf.exe")
+    pdf = pdf.from_file(render_template('quesPaper.html'))
+    pdf_out = pdf.getvalue()
+    response = make_response(pdf_out)
+    return response
+    """
+    """
+    config = pdf.configuration(wkhtmltopdf="E:/wkhtmltopdf/bin/wkhtmltopdf.exe")
+    pdf.from_file('E:/darshan sem 7/project/flaskTutorial/coreyImp/flaskblog/templates/quesPaperPdfDone.html', 'E:/darshan sem 7/project/flaskTutorial/coreyImp/flaskblog/templates/out3.pdf')
+    return render_template('quesPaperPdf.html', username=username,pdf=pdf)
+    """ 
+    """
+    return render_template('quesPaperPdf.html', username=username,pdf=pdf)
+       
+    except:
+        pdf=0
+    finally:
+        return render_template('quesPaperPdf.html', username=username,pdf=pdf)
+
+
+
+#@app.route('/index/<string:username>/generate/pdf')
+#def pdf(username,pdf):
+ #   return render_template('quesPaperPdf.html', username=username,pdf=pdf)
+    """
+
+
+
+"""
+impppp
+
+    @app.route("/")
+def Index():
+    name="Rink"
+    html = render_template('htmlFile.html')
+    pdf = pdfkit.from_file(html,'E:/darshan sem 7/project/flaskTutorial/coreyImp/flaskblog/templates/out1.pdf')
+    response = make_response(pdf)
+    response.headers["Content-Type"]="application/pdf"
+    response.headers["Content-Disposiion"]="inline; filename=out.pdf"
+    return response
+"""
+
+
+
+
+
+
+@app.route('/index/<string:username>/generate/pdf',methods=['POST','GET'])
+def PDFOfQuestionPaper(username):
+    config = pdf.configuration(wkhtmltopdf="E:/wkhtmltopdf/bin/wkhtmltopdf.exe")
+    dat = date.today()
+    rendered = render_template('quesPaper.html',username=username)
+    PDF = pdf.from_string(rendered,False)
+    response = make_response(PDF)
+    response.headers['Content-Type'] = 'application/pdf'
+    response.headers['Content-Disposition'] = 'inline; filename=output.pdf'
+    return response

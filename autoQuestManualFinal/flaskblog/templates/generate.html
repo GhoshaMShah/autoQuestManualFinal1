@@ -1,0 +1,214 @@
+<style type="text/css">
+	.genPage
+	{
+		z-index: 999;
+			width: 30%;
+			margin-top: 10px;
+			font-size: 16px;
+			box-shadow: 10px 10px 10px rgb(156, 154, 154);
+			margin:auto;
+	}
+</style>
+	{% include "header.html" %}
+    {% include "nav.html" %}
+	<head>
+<link href="{{url_for('static', filename = 'css/bootstrap.min.css')}}" rel="stylesheet">
+{% block body %}
+
+</head>
+
+
+
+<body>
+    <br><br><br>
+	<div class="container">
+
+    <div class="row">
+
+        <div class="col md-12">
+
+
+<center>
+
+<div class="genPage">
+
+	
+	
+	<form action="{{ url_for('questionPaperGenerate',username=username)}}" method="POST" name="SectionForm">
+		 <div class="form-group">
+
+    <label for="name">Semester:</label><br>
+    1 <input type="radio" name="semester" id="1" value="1" checked>&nbsp;&nbsp;&nbsp;
+    2 <input type="radio" name="semester" id="2" value="2">&nbsp;&nbsp;&nbsp;
+    3 <input type="radio" name="semester" id="3" value="3">&nbsp;&nbsp;&nbsp;
+    4 <input type="radio" name="semester" id="4" value="4">&nbsp;&nbsp;&nbsp; <br>
+    5 <input type="radio" name="semester" id="5" value="5">&nbsp;&nbsp;&nbsp;
+    6 <input type="radio" name="semester" id="6" value="6">&nbsp;&nbsp;&nbsp;
+    7 <input type="radio" name="semester" id="7" value="7">&nbsp;&nbsp;&nbsp;
+    8 <input type="radio" name="semester" id="8" value="8">&nbsp;&nbsp;&nbsp;
+
+          </div>
+<br>
+    <div class="form-group">
+
+    <label for="name">Subject:</label>
+    <input type="text" width="5px" class="form-control" name="subject" id="subject" required = "1" minlength="2">
+
+    <label for="name">Subject code:</label>
+    <input type="number" width="5px" class="form-control" name="subjectCode" id="subjectCode" required = "1" minlength="2">    
+
+</div>
+<div class="form-group">
+    <label for="name">Time duration:</label>
+    <input type="number" placeholder="hours" name="hours" id="hours" required = "1" minlength="1" min="0" max="4">
+    <input type="number" style="width:85px;" placeholder="minutes" name="mins" id="mins" required = "1" minlength="1" min="0" max="59">
+</div>
+
+<br><br>
+
+
+
+
+
+
+
+
+
+<!--
+
+
+Section-A
+<div class="form-group">
+
+    <label for="name">Marks:</label>
+    <input type="number" width="50px" class="form-control" name="marks1" id="marks1" required = "1" min="1" max="7" value="4" >
+
+</div>
+<br>
+
+    <div class="form-group">
+
+   &nbsp;&nbsp; <label for="name">Difficulty level:</label><br>&nbsp;&nbsp;
+    Easy <input type="radio" name="difficultyLevel1" id="easy" value="Easy" checked>&nbsp;&nbsp;&nbsp;
+    Average <input type="radio" name="difficultyLevel1" id="average" value="Average">&nbsp;&nbsp;&nbsp;
+    Difficult <input type="radio" name="difficultyLevel1" id="difficult" value="Difficult">
+
+</div>
+
+<div class="form-group">
+	Number of questions: &nbsp; &nbsp; <input type="number" required = "1" name="noOfQues1" min="1" max="10">
+</div>
+
+
+
+
+
+<br><br>
+
+
+
+Section-B
+
+<br>
+<div class="form-group">
+
+    <label for="name">Marks:</label>
+    <input type="number" width="50px" class="form-control" name="marks2" id="marks2" required = "1" min="1" max="7" value="4" >
+
+</div>
+<br>
+
+    <div class="form-group">
+
+   &nbsp;&nbsp; <label for="name">Difficulty level:</label><br>&nbsp;&nbsp;
+    Easy <input type="radio" name="difficultyLevel2" id="easy" value="Easy" checked>&nbsp;&nbsp;&nbsp;
+    Average <input type="radio" name="difficultyLevel2" id="average" value="Average">&nbsp;&nbsp;&nbsp;
+    Difficult <input type="radio" name="difficultyLevel2" id="difficult" value="Difficult">
+
+</div>
+
+<div class="form-group">
+	Number of questions: &nbsp; &nbsp; <input type="number" name="noOfQues2" required = "1" min="1" max="10">
+</div>
+
+
+
+
+	
+
+
+
+<br><br>
+ Section-C
+
+    
+<br>
+<div class="form-group">
+
+    <label for="name">Marks:</label>
+    <input type="number" width="50px" class="form-control" name="marks3" id="marks3" required = "1" min="1" max="7" value="4" >
+
+</div>
+<br>
+
+    <div class="form-group">
+
+   &nbsp;&nbsp; <label for="name">Difficulty level:</label><br>&nbsp;&nbsp;
+    Easy <input type="radio" name="difficultyLevel3" id="easy" value="Easy" checked>&nbsp;&nbsp;&nbsp;
+    Average <input type="radio" name="difficultyLevel3" id="average" value="Average">&nbsp;&nbsp;&nbsp;
+    Difficult <input type="radio" name="difficultyLevel3" id="difficult" value="Difficult">
+
+</div>
+
+<div class="form-group">
+	Number of questions: &nbsp; &nbsp; <input type="number" name="noOfQues3" required = "1" min="1" max="10">
+</div>
+
+
+
+
+-->
+
+<div class="form-group">
+<button class="btn btn-primary" type="reset"> Reset </button>
+
+<button class="btn btn-primary" type="submit"> Get Question paper </button>
+</div>
+
+
+	</form>
+</div>
+
+
+
+<!-- <div class="form-group"> -->
+
+	        
+</center>
+
+
+
+
+
+<br><br><br>
+<!--
+
+<form action="{{ url_for('questionPaper',username=username)}}" method="POST" name="SectionForm">
+	<button class="btn btn-primary" type="submit"> Get Question paper </button>
+</form>
+-->
+
+
+
+
+
+
+
+{% include "footer.html" %}
+
+{% endblock %}
+
+<script type="text/javascript" src="{{url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
+
+<script type="text/javascript" src="{{url_for('static', filename = 'js/bootstrap.min.js')}}"></script>
+</body>

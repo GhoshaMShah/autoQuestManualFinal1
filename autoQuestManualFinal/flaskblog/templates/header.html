@@ -1,0 +1,52 @@
+<html>
+
+<head>
+
+    <title> AutoQuest </title>
+    <link href="{{url_for('static', filename = 'css/bootstrap.min.css')}}" rel="stylesheet">
+<link rel="shortcut icon" href="{{url_for('static', filename = 'teacher.png' )}}">
+
+
+</head>
+
+<body>
+
+
+<div class="container">
+
+    <div class="well text-center">
+
+        <h1> Automatic Question paper generator system  </h1>
+    </div>
+    
+        <div>
+
+
+        {%with messages = get_flashed_messages(with_categories=true)%}
+
+    {%if messages%}
+
+    {% for category,message in messages %}
+
+    <div class="alert alert-{{ category }} alert-dismissable" role="alert">
+
+     <button type="button" class="close" data-dismiss="alert" aria-label ="close">
+
+         <span aria-hidden="true">&times;</span>
+
+     </button>
+        {{message}}
+
+
+    </div>
+
+
+    {%endfor%}
+    {%endif%}
+    {%endwith%}
+</div>
+
+          {% block content %}{% endblock %}
+
+    
+</div>
